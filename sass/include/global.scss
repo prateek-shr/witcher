@@ -1,0 +1,12 @@
+/*  global classes  */
+
+button, button:focus{
+    outline:none !important;
+    box-shadow: none !important;
+}
+
+.cover{
+    object-fit: cover;
+    height:90vh;
+    width:100%;
+}

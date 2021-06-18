@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witcher Store</title>
+
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- OWL CAROUSEL CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <!-- CUSTOM CSS FILE -->
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+      
+    function Delete(e){
+        let items = [];
+        JSON.parse(localStorage.getItem('items')).map(data=>{
+            if(data.id!=e.getAttribute('data-id')){
+                items.push(data);
+            }
+        });
+        localStorage.setItem('items',JSON.stringify(items));
+        window.location.reload();
+    }
+
+    </script>
+
+</head>
+<body>
+    
+    <!-- START HEADER -->
+        <header id="header">
+
+            <!-- Primary Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
+              <a class="navbar-brand" href="index.html">Witcher</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav m-auto font-rubik">
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="#top-sale">On-Sale</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Divisions <i class="fas fa-chevron-down"></i></a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="#footer">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    .
+                  </li>
+                </ul>
+                <form action="#" class="font-size-14 font-rale">
+                    <a href="cart.html" class="py-2 rounded-pill color-primary-bg" style="text-decoration: none;">
+                        <span class="font-size-16 px-2 text-white">&nbsp<i class="fas fa-shopping-cart"></i></span>
+                        <span class="px-3 py-2 rounded-pill text-dark bg-light citems">0</span>
+                    </a>
+                </form>
+                .
+              </div>
+            </nav>
+            <!-- Primary Navigation -->
+
+        </header>
+    <!-- START HEADER -->
+
+    <!-- START MAIN SITE -->
+        <main id="main-site">
+
+          <!-- Shopping Cart Section -->
+            <section id="cart" class="py-3">
+                <div class="container-fluid w-75">
+                    <h2 class="text-center font-rubik p-3">Shopping Cart</h2>
+
+                    <!-- Shopping Cart Items -->
+                        <div class="row products-container">
+                        </div>
+                    <!-- Shopping Cart Items -->
+                </div>
+            </section>
+          <!-- Shopping Cart Section -->
+
+
+          <!-- Top Sale -->
+          <section id="top-sale">
+            <div class="container py-5">
+              <h2 class= "font-rubik text-center">On-Sale</h2>
+              <hr>
+              <!-- Owl Carousel -->
+                <div class="owl-carousel owl-theme">
+                  
+                  <div class="item py-2">
+                    <div class="product font-rale">
+                      <img src="./assets/d9.jpg" alt="product1" class="img-fluid">
+                      <div class="text-center py-2">
+                        <h5><b>AL-900</b></h5>
+                        <div class="rating text-warning font-size-14">
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="far fa-star"></i></span>
+                        </div>
+                        <div class="price py-2">
+                          <span>$100</span>
+                        </div>
+                        <a href="900.html">
+                        <button type="submit" class="btn btn-danger font-size-14 text-white">Check Out</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item py-2">
+                    <div class="product font-rale">
+                      <img src="./assets/d2.jpg" alt="product1" class="img-fluid">
+                      <div class="text-center py-2">
+                        <h5><b>AL-200</b></h5>
+                        <div class="rating text-warning font-size-14">
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="far fa-star"></i></span>
+                        </div>
+                        <div class="price py-2">
+                          <span>$150</span>
+                        </div>
+                        <a href="200.html">
+                            <button type="submit" class="btn btn-danger font-size-14">Check Out</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item py-2">
+                    <div class="product font-rale">
+                      <img src="./assets/d3.jpg" alt="product1" class="img-fluid">
+                      <div class="text-center py-2">
+                        <h5><b>AL-300</b></h5>
+                        <div class="rating text-warning font-size-14">
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="far fa-star"></i></span>
+                        </div>
+                        <div class="price py-2">
+                          <span>$100</span>
+                        </div>
+                        <a href="300.html">
+                        <button type="submit" class="btn btn-danger font-size-14">Check Out</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item py-2">
+                    <div class="product font-rale">
+                      <img src="./assets/d6.jpg" alt="product1" class="img-fluid">
+                      <div class="text-center py-2">
+                        <h5><b>AL-600</b></h5>
+                        <div class="rating text-warning font-size-14">
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="far fa-star"></i></span>
+                        </div>
+                        <div class="price py-2">
+                          <span>$200</span>
+                        </div>
+                        <a href="600.html">
+                            <button type="submit" class="btn btn-danger font-size-14">Check Out</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item py-2">
+                    <div class="product font-rale">
+                      <img src="./assets/d5.jpg" alt="product1" class="img-fluid">
+                      <div class="text-center py-2">
+                        <h5><b>AL-500</b></h5>
+                        <div class="rating text-warning font-size-14">
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="fas fa-star"></i></span>
+                          <span><i class="far fa-star"></i></span>
+                        </div>
+                        <div class="price py-2">
+                          <span>$200</span>
+                        </div>
+                        <a href="500.html"><button type="submit" class="btn btn-danger font-size-14">Check Out</button></a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              <!-- Owl Carousel -->
+            </div>
+          </section>
+        <!-- Top Sale -->
+
+        </main>
+    <!-- START MAIN SITE -->
+
+    <!-- START FOOTER -->
+        <footer id="footer" class="bg-dark text-white py-5 mt-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 col-12">
+                  <h4 class="font-rubik font-size-20">Witcher ®</h4>
+                  <p class="font-size-14 font-rale text-white-50">Online Watch Store<br>Mumbai - 400101, India<br>Mobile : +91-9167435591<br>E-Mail : info@witcher.com<br>Get In Touch With Us :)</p><br>
+                </div>
+                <div class="col-lg-4 col-12">
+                  <h4 class="font-rubik font-size-20">Newsletter</h4>
+                  <form class="form-row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="E-mail ID">
+                    </div>
+                    <div class="col">
+                    <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
+                    </div>
+                  </form>
+                  <br>
+                </div>
+                <div class="col-lg-2 col-12">
+                  <h4 class="font-rubik font-size-20">Information</h4>
+                  <div class="d-flex flex-column flex-wrap">
+                    <a href="#" class="font-rale font-size-14 text-white-50 pb-1">About Us</a>
+                    <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Delivery Information</a>
+                    <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Privacy Policy</a>
+                    <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Terms & Conditions</a>
+                    <br>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-12">
+                  <h4 class="font-rubik font-size-20">Account</h4>
+                  <div class="d-flex flex-column flex-wrap">
+                    <a href="#" class="font-rale font-size-14 text-white-50 pb-1">My Account</a>
+                    <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Order History</a>
+                    <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Wish List</a>
+                    <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Newsletter</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </footer>
+    <!-- START FOOTER -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+
+    <!-- OWL CAROUSEL JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- ISOTOPE PLUGIN CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+
+    <!-- CUSTOM JAVASCRIPT -->
+    <script src="./index.js"></script>
+    <script src="./cart.js"></script>
+</body>
+</html>
